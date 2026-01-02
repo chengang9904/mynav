@@ -120,4 +120,39 @@ document.addEventListener('DOMContentLoaded', () => {
             cardElement.style.pointerEvents = 'none';
         }
     }
+
+    // 随机端口生成器功能
+    const portValueEl = document.getElementById('port-value');
+    const generatePortBtn = document.getElementById('generate-port');
+    const copyPortBtn = document.getElementById('copy-port');
+
+    // 生成随机端口（10000-65535）
+    function generateRandomPort() {
+        const min = 10000;
+        const max = 65535;
+        const randomPort = Math.floor(Math.random() * (max - min + 1)) + min;
+        portValueEl.textContent = randomPort;
+    }
+
+    // 复制端口到剪贴板
+    async function copyPortToClipboard() {
+        const port = portValueEl.textContent;
+        try {
+            await navigator.clipboard.writeText(port);
+            // 显示复制成功反馈
+            copyPortBtn.classList.add('copied');
+            setTimeout(() => {
+                copyPortBtn.classList.remove('copied');
+            }, 1500);
+        } catch (err) {
+            console.error('复制失败:', err);
+        }
+    }
+
+    // 绑定事件
+    generatePortBtn.addEventListener('click', generateRandomPort);
+    copyPortBtn.addEventListener('click', copyPortToClipboard);
+
+    // 初始化时生成一个随机端口
+    generateRandomPort();
 });

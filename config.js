@@ -21,6 +21,13 @@ const CONFIG = {
                     wan: "",
                     desc: "网络出口网关"
                 },
+                {
+                    name: "OpenWrt 辅路由",
+                    icon: "fa-solid fa-wifi",
+                    lan: "http://192.168.2.11",
+                    wan: "",
+                    desc: "家庭网络管理"
+                },
                 { 
                     name: "PVE 管理", 
                     icon: "fa-solid fa-server", 
@@ -30,7 +37,7 @@ const CONFIG = {
                 },
                 { 
                     name: "飞牛 NAS", 
-                    icon: "fa-solid fa-hard-drive", 
+                    icon: "fa-solid fa-database", 
                     lan: "http://192.168.2.3:5666", 
                     wan: "https://fnos.net/fncscat",
                     desc: "数据存储中心"
@@ -42,10 +49,17 @@ const CONFIG = {
             items: [
                 { 
                     name: "飞牛影视", 
-                    icon: "fa-brands fa-plex", 
+                    icon: "fa-brands fa-youtube", 
                     lan: "http://192.168.2.3:5666/v", 
-                    wan: "https://fnjp.cscat.cn",
+                    wan: "https://fnjp.cscat.cn/v",
                     desc: "流媒体中心"
+                },
+                {
+                    name: "MoviePilot", 
+                    icon: "fa-brands fa-youtube", 
+                    lan: "http://192.168.2.3:3000", 
+                    wan: "https://mp.cscat.cn/",
+                    desc: "Nas媒体管理工具"
                 },
                 { 
                     name: "Transmission", 

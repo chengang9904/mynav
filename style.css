@@ -195,6 +195,74 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Port Generator */
+.port-generator {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.port-display {
+    background: var(--card-bg);
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.port-label {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.port-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    font-family: 'Courier New', monospace;
+    min-width: 60px;
+    text-align: center;
+}
+
+.port-button {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.port-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.port-button:active {
+    transform: translateY(0);
+}
+
+.port-button i {
+    pointer-events: none;
+}
+
+.port-button.copied {
+    background: #10b981;
+}
+
+.port-button.copied i::before {
+    content: "\f00c";
+}
+
 /* Mobile optimization */
 @media (max-width: 640px) {
     .grid {
