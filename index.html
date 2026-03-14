@@ -1,53 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>加载中...</title>
-    <!-- FontAwesome 图标库 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome 图标库 (国内CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+    />
     <!-- 自定义样式 -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1 id="page-title">我的导航</h1>
-            
-            <div class="mode-switch">
-                <span class="switch-label" id="label-lan">内网</span>
-                <label class="toggle-wrapper">
-                    <input type="checkbox" id="mode-toggle" class="toggle-checkbox">
-                    <div class="toggle-slider"></div>
-                </label>
-                <span class="switch-label" id="label-wan">外网</span>
-            </div>
-        </header>
+      <header>
+        <h1 id="page-title">我的导航</h1>
 
-        <main id="categories-container">
-            <!-- 内容将由 JavaScript 动态生成 -->
-        </main>
+        <div class="mode-switch">
+          <span class="switch-label" id="label-lan">内网</span>
+          <label class="toggle-wrapper">
+            <input type="checkbox" id="mode-toggle" class="toggle-checkbox" />
+            <div class="toggle-slider"></div>
+          </label>
+          <span class="switch-label" id="label-wan">外网</span>
+        </div>
+      </header>
 
-        <footer>
-            <div class="port-generator">
-                <div class="port-display">
-                    <span class="port-label">随机端口:</span>
-                    <span class="port-value" id="port-value">10000</span>
-                    <button class="port-button" id="generate-port" title="生成随机端口">
-                        <i class="fas fa-sync-alt"></i>
-                    </button>
-                    <button class="port-button" id="copy-port" title="复制端口">
-                        <i class="fas fa-copy"></i>
-                    </button>
-                </div>
-            </div>
-            <p>&copy; 2025 Home Lab Navigation</p>
-        </footer>
+      <main id="categories-container">
+        <!-- 内容将由 JavaScript 动态生成 -->
+      </main>
+
+      <footer>
+        <div class="port-generator">
+          <div class="port-display">
+            <span class="port-label">随机端口:</span>
+            <span class="port-value" id="port-value">10000</span>
+            <button class="port-button" id="generate-port" title="生成随机端口">
+              <i class="fas fa-sync-alt"></i>
+            </button>
+            <button class="port-button" id="copy-port" title="复制端口">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+        </div>
+        <div class="string-generator">
+          <div class="string-display">
+            <span class="string-label">随机字符串:</span>
+            <span class="string-value" id="string-value">abcdefgh</span>
+            <button
+              class="string-button"
+              id="generate-string"
+              title="生成随机字符串"
+            >
+              <i class="fas fa-sync-alt"></i>
+            </button>
+            <button class="string-button" id="copy-string" title="复制字符串">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <!-- 配置文件 (必须在 script.js 之前加载) -->
     <script src="config.js"></script>
     <!-- 逻辑脚本 -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

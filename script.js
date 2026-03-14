@@ -155,4 +155,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 初始化时生成一个随机端口
     generateRandomPort();
+
+    // 随机字符串生成器功能
+    const stringValueEl = document.getElementById('string-value');
+    const generateStringBtn = document.getElementById('generate-string');
+    const copyStringBtn = document.getElementById('copy-string');
+
+    // 生成随机字符串（默认8位，字母数字混合）
+    function generateRandomString(length = 8) {
+        const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            result += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        stringValueEl.textContent = result;
+    }
+
+    // 复制字符串到剪贴板
+    async function copyStringToClipboard() {
+        const str = stringValueEl.textContent;
+        try {
+            await navigator.clipboard.writeText(str);
+            // 显示复制成功反馈
+            copyStringBtn.classList.add('copied');
+            setTimeout(() => {
+                copyStringBtn.classList.remove('copied');
+            }, 1500);
+        } catch (err) {
+            console.error('复制失败:', err);
+        }
+    }
+
+    // 绑定事件
+    generateStringBtn.addEventListener('click', () => generateRandomString());
+    copyStringBtn.addEventListener('click', copyStringToClipboard);
+
+    // 初始化时生成一个随机字符串
+    generateRandomString();
 });
